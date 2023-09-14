@@ -82,7 +82,7 @@ function install_nominatim(){
 	
     #download
     pushd /home/${NM_USER}
-			git clone --recursive https://github.com/openstreetmap/Nominatim.git
+			git clone --recursive https://ghproxy.com/https://github.com/openstreetmap/Nominatim.git
 			
 	    #compile
 	    pushd Nominatim
@@ -113,7 +113,7 @@ function install_nominatim_ui(){
 	
 	pushd /home/${NM_USER}
 	
-		wget -P/tmp https://github.com/osm-search/nominatim-ui/releases/download/v${NMUI_VER}/nominatim-ui-${NMUI_VER}.tar.gz
+		wget -P/tmp https://ghproxy.com/https://github.com/osm-search/nominatim-ui/releases/download/v${NMUI_VER}/nominatim-ui-${NMUI_VER}.tar.gz
 		tar -xf /tmp/nominatim-ui-${NMUI_VER}.tar.gz
 		rm -rf /tmp/nominatim-ui-${NMUI_VER}.tar.gz
 		
@@ -126,7 +126,7 @@ function install_nominatim_ui(){
 		#Add webapp
   		mv nominatim-ui-${NMUI_VER}/dist/* /var/www/html/
 		rm -f /var/www/html/index.html
-		wget --quiet -P/tmp https://github.com/AcuGIS/Nominatim-Server/archive/refs/heads/master.zip
+		wget --quiet -P/tmp https://ghproxy.com/https://github.com/AcuGIS/Nominatim-Server/archive/refs/heads/master.zip
 		unzip /tmp/master.zip -d/tmp
 		cp -r /tmp/Nominatim-Server-master/app/* /var/www/html/
 		rm -rf /tmp/master.zip
@@ -231,7 +231,7 @@ function enable_nm_updates(){
     cat >/etc/systemd/system/nominatim-updates.service <<EOF
 [Unit]
 Description=Nominatum Updates
-Documentation=https://github.com/f1ana/OpenNameSearch
+Documentation=https://ghproxy.com/https://github.com/f1ana/OpenNameSearch
 
 [Service]
 Type=simple
