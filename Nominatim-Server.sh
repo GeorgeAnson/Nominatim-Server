@@ -82,7 +82,7 @@ function install_nominatim(){
 	
     #download
     pushd /home/${NM_USER}
-			git clone --recursive https://ghproxy.com/https://github.com/openstreetmap/Nominatim.git
+			git clone --recursive https://ghproxy.com/https://github.com/GeorgeAnson/Nominatim.git
 			
 	    #compile
 	    pushd Nominatim
